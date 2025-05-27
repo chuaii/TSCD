@@ -1,6 +1,6 @@
 
 
-# Task-Specific SpatioTemporal Context-Aware Decoupling for Occluded Video Object Detection. (This GitHub account doesn't reveal any information about the author, sticking to the principle of double-blind.)
+# Task-Specific SpatioTemporal Context-Aware Decoupling for Occluded Video Object Detection.(2025 ICIP)
 ## Update
 * **` April. 30th, 2025`**:  We have performed comparative experiments with mainstream tracking-by-detection methods on the OVIS datasets(see Fig.5).
 
