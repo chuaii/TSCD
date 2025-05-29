@@ -1,6 +1,6 @@
 
 
-# Task-Specific SpatioTemporal Context-Aware Decoupling for Occluded Video Object Detection.(2025 ICIP)
+# Task-Specific SpatioTemporal Context-Aware Decoupling for Occluded Video Object Detection. (2025 ICIP)
 ## Update
 * **` April. 30th, 2025`**:  We have performed comparative experiments with mainstream tracking-by-detection methods on the OVIS datasets(see Fig.5).
 
@@ -18,7 +18,7 @@ This repo is an implementation of PyTorch version TSCD based on YOLOV and YOLOX.
 
 Install TSCD from source.
 ```shell
-git clone git@github.com:Video-Object-Detection/TSCD.git
+git clone git@github.com:KaihongLi/TSCD.git
 cd TSCD
 ```
 
@@ -60,12 +60,12 @@ OVIS is used to validate the effect of detecting occluded objects.The training s
 ![Label Ratios by Category in Dataset](OVIS_Preprocess/division/datasets_ratio/Label_Ratios.png)
 <p align="center">Fig. 1. Ratio of labels for each category in the training and validation sets</p>
 
-Step 1. Download the OVIS dataset from [OVIS official website] and organize it as follows:
+Step 1. Download the OVIS dataset from [OVIS official website](https://songbai.site/ovis/) and organize it as follows:
 ```shell
 path to your datasets/ovis
 ```
 
-Step 2. Divide the training and validation sets yourself and convert the OVIS COCO format annotations for video object detection. (Download the [annotations] of the divided training and validation sets for video object detection directly. Then, put them in datasets/ovis/annotations.)
+Step 2. Divide the training and validation sets yourself and convert the OVIS COCO format annotations for video object detection. (Download the [annotations](https://drive.google.com/drive/folders/18RcOYV17sAM845-7qIt_YpVt2IA60Ohp?usp=sharing) of the divided training and validation sets for video object detection directly. Then, put them in datasets/ovis/annotations.)
 ```shell
 python OVIS_Preprocess/division/ovis_train_valid_data_division.py
 -o path to your datasets/ovis/annotaions/annotations_train.json
@@ -80,10 +80,10 @@ python yolox/data/datasets/ovis.py
 --vid_valid path to your datasets/ovis/annotaions/ovis_valid_vid.json
 ```
 
-Step 3. Change the "data_dir" field in [exp files](exps/TSCD_OVIS) to [path to your datasets] and download our [weights].
+Step 3. Change the "data_dir" field in [exp files](exps/TSCD_OVIS) to [path to your datasets] and download our [weights](https://drive.google.com/drive/folders/1uPZ5bFhkZ41rekVetEciEb_oYSIDRKjs?usp=sharing).
 
 **Training:**
-1. The baseline YOLOX detector was initialized with COCO-pretrained weights from the [YOLOX official repository] and fine-tuned on the OVIS dataset.
+1. The baseline YOLOX detector was initialized with COCO-pretrained weights from the [YOLOX official repository](https://github.com/Megvii-BaseDetection/YOLOX) and fine-tuned on the OVIS dataset.
 ```shell
 python tools/train.py -f exps/ovis_default/ovis_yolox_l.py -c [yolox_l pretrained weights on COCO] -b [batch size] -d [your devices] --fp16
 ```
@@ -108,18 +108,18 @@ python tools/tscd_demo.py -f exps/TSCD_OVIS/ovis_tscd_large.py -c [path to your 
 
 
 <details>
-<summary>Reproduce our results on VID</summary>
+<summary>Reproduce our results on VID (Reference to YOLOV++)</summary>
 
 Step 1. Download datasets and weights:
 
-Download ILSVRC2015 DET and ILSVRC2015 VID dataset from [IMAGENET offical website] and organise them as follows:
+Download ILSVRC2015 DET and ILSVRC2015 VID dataset from [IMAGENET offical website](https://www.image-net.org/) and organise them as follows:
 
 ```shell
 path to your datasets/ILSVRC2015/
 path to your datasets/ILSVRC/
 ```
 
-Download COCO-style [annotations] for training, FGFA version training [annotation] and [training/validation video sequences]. Then, put them in these two directories:
+Download COCO-style [annotations](https://drive.google.com/drive/folders/1o80ij1TMPi3IXLuX1rPM2omnN_-y66AH?usp=sharing) for training, FGFA version training [annotation](https://drive.google.com/drive/folders/1o80ij1TMPi3IXLuX1rPM2omnN_-y66AH?usp=sharing) and [training/validation video sequences](https://drive.google.com/drive/folders/1o80ij1TMPi3IXLuX1rPM2omnN_-y66AH?usp=sharing). Then, put them in these two directories:
 ```shell
 ./annotations/vid_train_coco.json
 ./annotations/ILSVRC_FGFA_COCO.json
@@ -127,7 +127,7 @@ Download COCO-style [annotations] for training, FGFA version training [annotatio
 ./yolox/data/dataset/val_seq.npy
 ```
 
-Change the data_dir in exp files to [path to your datasets] and Download our weights.
+Change the data_dir in [exp files](exps/TSCD_VID) to [path to your datasets] and Download our [weights](https://drive.google.com/drive/folders/1uPZ5bFhkZ41rekVetEciEb_oYSIDRKjs?usp=sharing).
 
 Step 2. Generate predictions and convert them to IMDB style for evaluation.
 
@@ -288,9 +288,9 @@ python tools/tscd_demo.py -f exps/TSCD_VID/VID_tscd_large.py -c [path to your we
 
 ## Acknowledgements
 
-* [YOLOV]
-* [YOLOX]
-* [Robust-and-efficient-post-processing-for-video-object-detection]
+* [YOLOV](https://github.com/YuHengsss/YOLOV)
+* [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
+* [Robust and efficient post-processing for video object detection](https://github.com/AlbertoSabater/Robust-and-efficient-post-processing-for-video-object-detection)
 
 
 
