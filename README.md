@@ -1,6 +1,9 @@
 
 
 # Task-Specific SpatioTemporal Context-Aware Decoupling for Occluded Video Object Detection. (2025 ICIP)
+
+Pytorch implementation for paper for paper [Task-Specific SpatioTemporal Context-Aware Decoupling for Occluded Video Object Detection](https://ieeexplore.ieee.org/document/11084574), 2025 ICIP.
+
 ## Update
 * **` April. 30th, 2025`**:  We have performed comparative experiments with mainstream tracking-by-detection methods on the OVIS datasets(see Fig.5).
 
